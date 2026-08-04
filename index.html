@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OVRLYK° — Oversize não é desleixo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="logo">OVRLYK<span>°</span></a>
+    <nav class="links">
+      <a href="#catalogo">Loja</a>
+      <a href="#manifesto">Sobre</a>
+      <a href="#newsletter">Contato</a>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="openCart" aria-haspopup="dialog">
+        CARRINHO <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Drop 001 — streetwear oversize</p>
+      <h1>MAIS ALTO<br>MAIS<br><span class="accent">VISADO</span></h1>
+      <p class="hero-sub">Corte solto, caimento certo. Ombro caído no lugar, comprimento que cobre sem exagerar, tecido pesado que não perde a forma.</p>
+      <div class="hero-cta-row">
+        <a href="#catalogo" class="btn-primary">Ver coleção</a>
+        <span class="hero-tag">Frete grátis acima de R$299</span>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num">04</div><div class="label">Categorias</div></div>
+        <div><div class="num">100%</div><div class="label">Algodão</div></div>
+        <div><div class="num">Em menos 30D</div><div class="label">Troca garantida</div></div>
+        <div><div class="num">BR</div><div class="label">Produção nacional</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hazard-divider" role="presentation" aria-hidden="true"></div>
+
+  <section class="filter-section" id="catalogo">
+    <div class="wrap filter-row">
+      <span class="eyebrow">Filtrar</span>
+      <button class="chip active" data-cat="todos">Todos</button>
+      <button class="chip" data-cat="camisetas">Camisetas</button>
+      <button class="chip" data-cat="moletons">Moletons</button>
+      <button class="chip" data-cat="calcas">Calças</button>
+      <button class="chip" data-cat="acessorios">Acessórios</button>
+    </div>
+  </section>
+
+  <section class="catalog">
+    <div class="wrap">
+      <p class="eyebrow">Catálogo — <span id="resultCount">0</span> peças</p>
+      <div class="grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section class="manifesto" id="manifesto">
+    <div class="wrap">
+      <div class="manifesto-left">
+        <p class="eyebrow">Manifesto</p>
+        <h2>Solto no corpo,<br>fechado<br>na ideia.</h2>
+      </div>
+      <div class="manifesto-right">
+        <p>A OVRLYK leva o corte oversize a sério: caimento pensado peça por peça, não é só pegar um tamanho maior e chamar de streetwear.</p>
+        <p>Sem estampa que descasca, sem tecido que perde a forma na segunda lavada. Se não aguenta o uso, não sai da fábrica.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="wrap">
+      <div>
+        <h3>Entra na lista</h3>
+        <p class="hero-tag">Lançamento e desconto de fábrica, direto no seu e-mail.</p>
+      </div>
+      <div>
+        <form id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="seu@email.com" required>
+          <button type="submit">Assinar</button>
+        </form>
+        <p class="form-msg" id="newsletterMsg"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Ovrlyk°</h4>
+        <a href="#catalogo">Loja</a>
+        <a href="#manifesto">Sobre</a>
+        <a href="#newsletter">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ajuda</h4>
+        <a href="#">Trocas e devoluções</a>
+        <a href="#">Guia de medidas</a>
+        <a href="#">Rastrear pedido</a>
+      </div>
+      <div class="footer-col">
+        <h4>Redes</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 OVRLYK. Todos os direitos reservados.</span>
+      <span>Feito largo, vendido em bytes.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" role="dialog" aria-label="Carrinho de compras">
+  <div class="drawer-head">
+    <h3>Carrinho</h3>
+    <button class="close-btn" id="closeCart" aria-label="Fechar carrinho">×</button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-foot">
+    <div class="total-row">
+      <span>Total</span>
+      <span class="amount mono" id="cartTotal">R$ 0,00</span>
+    </div>
+    <button class="checkout-btn" id="checkoutBtn" disabled>Finalizar pedido</button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
